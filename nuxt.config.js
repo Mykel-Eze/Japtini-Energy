@@ -28,12 +28,15 @@ export default {
   css: [
     '@/assets/css/fonts.css',
     '@/assets/css/styles.css',
-    'materialize-css/dist/css/materialize.min.css',
-    'material-design-icons/iconfont/material-icons.css'
+    'materialize-css/dist/css/materialize.min.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {
+      src: '@/plugins/fullpage.js',
+      ssr: false
+    }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

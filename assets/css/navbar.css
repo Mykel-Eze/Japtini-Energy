@@ -1,0 +1,30 @@
+img.brand-logo-img-2 {
+  display: none;
+}
+img.brand-logo-img {
+  display: initial;
+}
+nav.scrolled-nav img.brand-logo-img {
+  display: none;
+}
+nav.scrolled-nav img.brand-logo-img-2 {
+  display: initial;
+}
+a.nav-link-btn {
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+  height: 46px;
+  line-height: 45px;
+  width: 140px;
+  letter-spacing: -0.02em;
+  font-size: 16px;
+  text-align: center;
+}
+nav.scrolled-nav a.nav-link-btn {
+  border-color: #58595B;
+  color: #58595B;
+  height: 40px;
+  line-height: 39px;
+  width: 130px;
+  transform: translateY(-5px);
+}

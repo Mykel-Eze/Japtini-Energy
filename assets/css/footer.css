@@ -1,0 +1,98 @@
+footer {
+  color: white;
+  background: #58595B;
+  position: relative;
+  padding: 50px 0 30px;
+}
+footer::before {
+  position: absolute;
+  content: "";
+  width: 36%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #B2D235;
+}
+.get-in-touch {
+  background: #B2D235;
+  color: white;
+  font-size: 24px;
+}
+.git-form-field {
+  position: relative;
+  max-width: 350px;
+}
+.git-form-field input {
+  color: white;
+  border-color: white !important;
+  font-size: 12px;
+  box-shadow: none !important;
+}
+.git-form-field input::placeholder {
+  color: white;
+}
+button.submit-git-btn {
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+}
+ul.footer-social-link {
+  display: flex;
+}
+ul.footer-social-link li:not(:last-child) {
+  margin-right: 10px;
+}
+.footer-details {
+  font-size: 12px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+.footer-details-block {
+  max-width: 180px;
+  line-height: 1.6;
+}
+a.footer-details-link {
+  color: white;
+}
+.footer-detials-block.footer-copyright {
+  font-size: 10px;
+}
+hr.footer-details-divider {
+  border: none;
+  height: 1px;
+  background: white;
+  margin: 25px 0 15px;
+}
+ul.footer-nav-links li {
+  margin-bottom: 10px;
+}
+ul.footer-nav-links li a {
+  font-size: 20px;
+  line-height: 26px;
+  color: white;
+  font-family: var(--font-light);
+}
+
+@media(max-width: 992px) {
+  footer::before {
+    display: none;
+  }
+  .get-in-touch {
+    margin-bottom: 30px;
+    background-color: transparent;
+  }
+}
+
+@media(max-width: 600px) {
+  .footer-details:first-child {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .footer-details:first-child .footer-details-block:first-child {
+    margin-bottom: 20px;
+  }
+}

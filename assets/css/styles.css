@@ -180,21 +180,196 @@ img {
 }
 
 /**** Some Home Style ****/
-#home {
+#home,
+#fullpage .section {
     background-color: #f7f7f7;
     color: black;
-    height: calc(100vh - 80px);
+    height: 100vh;
     min-height: 600px;
+
+    background-color: #3D74B4;
 }
-#home > .row {
+#fullpage .section > .row {
     margin-bottom: 0;
 }
+
+#home,
+#landing.section {
+  background: url(../images/banner-main.jpg);
+}
+
+h4.section-title {
+  font-family: var(--font-bold);
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -0.02em;
+  color: #58595B;
+}
+
+.big-banner-txt-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  justify-content: center;
+}
+.big-banner-txt {
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  font-family: var(--font-bold);
+  font-size: 76px;
+  line-height: 81px;
+}
+img.banner-logo-icon {
+  position: relative;
+  top: -10px;
+}
+
+/* fullpage.js overflow */
+/* .fullpage-wrapper {
+	width: 100%!important;
+	transform: none!important;
+}
+.fp-section {
+	width: 100%!important;
+	position: absolute;
+	left: 0;
+	top: 0;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 0;
+	transition: all 1.5s ease-in-out;
+}
+.fp-section.active {
+	visibility: visible;
+	opacity: 1;
+	z-index: 1;
+} */
+
 @media(min-width: 1500px) {
 }
-@media(max-width: 600px) {
 
+@media(max-width: 992px) {
+  .big-banner-txt-wrapper.flex-div {
+    flex-direction: column;
+  }
+  .big-banner-txt {
+    /* font-size: 50px;
+    line-height: 60px; */
+    text-align: center;
+  }
+}
+@media(max-width: 600px) {
+  .big-banner-txt {
+    font-size: 50px;
+    line-height: 60px;
+  }
 }
 /**** end of Some Home Styles ****/
+
+/**** About Styles ****/
+h4.section-title {
+  font-family: var(--font-bold);
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -0.02em;
+  color: #58595B;
+}
+.section-sub-title.pry-color {
+  font-size: 24px;
+  line-height: 31px;
+  font-family: var(--font-medium);
+}
+.section-body-txts {
+  font-size: 18px;
+  line-height: 26px;
+}
+section#about {
+  padding: 30px 0;
+  background: #F1F8FF;
+  position: relative;
+}
+section#about::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/background-logo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}
+.sect-content-wrapper {
+  margin: 40px 0;
+}
+
+@media(min-width: 993px) {
+  .about-container {
+    width: 70%;
+    margin: auto;
+  }
+  section#about .section-sub-title.pry-color {
+    width: 70%;
+  }
+  .section-sub-title.pry-color {
+    width: 70%;
+  }
+}
+/**** end of About Styles ****/
+
+/**** Services Styles ****/
+section#services .section-sub-title.pry-color {
+  border-left: 3px solid #7AB56D;
+  padding-left: 15px;
+}
+
+@media(min-width: 993px) {
+  section#services .sect-content-wrapper:nth-child(odd) .section-txt-side {
+    padding-right: 60px !important;
+  }
+  section#services .sect-content-wrapper:nth-child(even) .section-txt-side {
+    padding-left: 60px !important;
+  }
+  section#services .section-txt-side {
+    margin-top: 30px;
+  }
+}
+@media(max-width: 600px) {
+  section#services {
+    padding: 30px 0 10px;
+  }
+  .sect-content-wrapper {
+    margin: 20px 0;
+  }
+}
+/**** end of Services Styles ****/
+
+/**** Solutions Styles ****/
+section#solutions {
+  padding: 30px 0;
+  background: #00B0F0;
+  position: relative;
+  color: white;
+}
+section#solutions .section-body-txts {
+  margin: 30px 0;
+}
+.section-btn-white {
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+  height: 50px;
+  line-height: 46px;
+  width: 150px;
+  letter-spacing: -0.02em;
+  font-size: 16px;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+  margin: 10px 0;
+}
+/**** end of Solutions Styles ****/
+
 
 @media(min-width: 601px) {
     .container {
@@ -252,20 +427,22 @@ img {
         padding: 0 !important;
     }
 
-    a.brand-logo img {
-        width: auto;
-        height: 35px;
-        position: relative;
-        top: 10px;
+    a.brand-logo img, nav.scrolled-nav a.brand-logo img {
+      width: auto;
+      height: 45px;
+      position: relative;
+      top: 3px;
     }
     nav .brand-logo{
         left: 0;
         transform: translateX(0);
     }
-    nav.scrolled-nav a.brand-logo img {
-        width: auto;
-        height: 35px;
-        top: 10px;
+    a.nav-link-btn, nav.scrolled-nav a.nav-link-btn {
+      height: 35px !important;
+      line-height: 34px !important;
+      width: 100px !important;
+      transform: translateY(0px) !important;
+      font-size: 14px !important;
     }
     #home-txt-side {
         position: relative;
