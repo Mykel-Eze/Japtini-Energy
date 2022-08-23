@@ -10,7 +10,7 @@
         </div>
         <ul class="nav-links-wrapper">
           <li>
-            <a href="" class="nav-link-btn">About us</a>
+            <a href="/#about" class="nav-link-btn">About us</a>
           </li>
         </ul>
       </div>

@@ -7,12 +7,12 @@
             <div class="git-block-title">
               Get in touch
             </div>
-            <div class="git-form-field">
+            <form class="git-form-field">
               <input type="email" placeholder="Email Address">
-              <button class="submit-git-btn">
+              <button class="submit-git-btn pointer">
                 <img src="../assets/images/long-arrow.svg" alt="arrow">
               </button>
-            </div>
+            </form>
           </div>
           <div class="col s12 l8">
             <div class="col s12 l11 offset-l1">

@@ -9,6 +9,7 @@
 
     width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -179,23 +180,48 @@ img {
     max-width: 100%;
 }
 
-/**** Some Home Style ****/
-#home,
+/**** LandingSection Style ****/
+.landing-section-wrapper {
+  position: relative;
+}
+#fullpage {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
 #fullpage .section {
     background-color: #f7f7f7;
     color: black;
     height: 100vh;
-    min-height: 600px;
-
     background-color: #3D74B4;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    box-sizing: border-box;
+}
+#fullpage .other-sections {
+  padding: 0;
+  scroll-snap-align: start;
 }
 #fullpage .section > .row {
     margin-bottom: 0;
 }
 
-#home,
 #landing.section {
   background: url(../images/banner-main.jpg);
+}
+#vision.section {
+  background: url(../images/banner-vision.jpg);
+}
+#mission.section {
+  background: url(../images/banner-mission.jpg);
+}
+#objectives.section {
+  background: url(../images/banner-objectives.jpg);
 }
 
 h4.section-title {
@@ -225,26 +251,152 @@ img.banner-logo-icon {
   top: -10px;
 }
 
-/* fullpage.js overflow */
-/* .fullpage-wrapper {
-	width: 100%!important;
-	transform: none!important;
+.menu-indicator-wrapper {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  bottom: 0;
 }
-.fp-section {
-	width: 100%!important;
-	position: absolute;
-	left: 0;
-	top: 0;
-	visibility: hidden;
-	opacity: 0;
-	z-index: 0;
-	transition: all 1.5s ease-in-out;
+ul.menu.menu-indicator {
+  max-width: 105px;
 }
-.fp-section.active {
-	visibility: visible;
-	opacity: 1;
-	z-index: 1;
+ul.menu.menu-indicator .page-indicator a {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  line-height: 27px;
+}
+/* ul.menu.menu-indicator .page-indicator a {} */
+ul.menu.menu-indicator hr {
+  width: 0.5px;
+  height: 40px;
+  background-color: white;
+  margin: 0;
+  margin-left: 7px;
+  border: none;
+}
+.indicator-bullet {
+  width: 14px;
+  height: 14px;
+  border: 0.5px solid white;
+  box-sizing: border-box;
+  border-radius: 50%;
+  margin-right: 15px;
+  position: relative;
+}
+.indicator-bullet::before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 1s;
+  /* background-color: gray; */
+}
+.active .indicator-bullet {
+  background: rgba(255, 255, 255, 0.2);
+}
+.active .indicator-bullet::before {
+  opacity: 1;
+  transition: opacity 1.5s;
+  background-color: white;
+}
+/* .indicator-title {
+  opacity: 0;
+  transition: opacity 1s;
+}
+.page-indicator:hover .indicator-title {
+  opacity: 1;
+  transition: opacity 1.5s;
 } */
+
+.scroll-services-div {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  color: white;
+  bottom: 0;
+  font-size: 14px;
+}
+hr.vertical-line {
+  width: 60px;
+  transform: rotate(90deg);
+  margin: 30px auto;
+  border: none;
+  height: 1px;
+  background: white;
+}
+
+.side-drop {
+  position: absolute;
+  width: 40%;
+  right: 0;
+  top: 0;
+  background-color: var(--pry-color);
+  height: 100%;
+  color: white;
+}
+#vision .side-drop {
+  background: linear-gradient(19.07deg, #00D788 0%, #00BBFF 95.82%);
+}
+#mission .side-drop {
+  background: linear-gradient(19.07deg, #255E88 0%, #52B1C3 95.82%);
+}
+#objectives .side-drop {
+  background: linear-gradient(19.07deg, #3A7E54 0%, #B2D235 95.82%);
+}
+h1.big-page-num {
+  font-family: var(--font-xbold);
+  font-size: 400px;
+  line-height: 521px;
+  color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.section-block-txt, .section-block-txt-2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  line-height: 31px;
+  width: 80%;
+}
+.section-block-txt-2 {
+  top: calc(60% + 15px);
+}
+.section-block-txt-2 ul li.flex-div {
+  align-items: flex-start;
+}
+.section-block-txt-2 ul li:not(:last-child) {
+  margin-bottom: 15px;
+}
+span.list-icon {
+  margin-right: 20px;
+}
+.page-name {
+  position: absolute;
+  font-size: 76px;
+  line-height: 81px;
+  font-family: var(--font-xbold);
+  letter-spacing: -0.03em;
+}
+.page-name {
+  position: absolute;
+  font-size: 76px;
+  line-height: 81px;
+  font-family: var(--font-xbold);
+  letter-spacing: -0.03em;
+  top: 30%;
+  transform: translateY(-50%);
+  left: -50%;
+}
 
 @media(min-width: 1500px) {
 }
@@ -254,8 +406,6 @@ img.banner-logo-icon {
     flex-direction: column;
   }
   .big-banner-txt {
-    /* font-size: 50px;
-    line-height: 60px; */
     text-align: center;
   }
 }
@@ -265,7 +415,8 @@ img.banner-logo-icon {
     line-height: 60px;
   }
 }
-/**** end of Some Home Styles ****/
+/**** end of LandingSection Styles ****/
+
 
 /**** About Styles ****/
 h4.section-title {
@@ -274,22 +425,22 @@ h4.section-title {
   line-height: 52px;
   letter-spacing: -0.02em;
   color: #58595B;
-}
-.section-sub-title.pry-color {
+  }
+  .section-sub-title.pry-color {
   font-size: 24px;
   line-height: 31px;
   font-family: var(--font-medium);
-}
-.section-body-txts {
+  }
+  .section-body-txts {
   font-size: 18px;
   line-height: 26px;
-}
-section#about {
+  }
+  section#about {
   padding: 30px 0;
   background: #F1F8FF;
   position: relative;
-}
-section#about::before {
+  }
+  section#about::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -298,12 +449,12 @@ section#about::before {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
-}
-.sect-content-wrapper {
+  }
+  .sect-content-wrapper {
   margin: 40px 0;
-}
+  }
 
-@media(min-width: 993px) {
+  @media(min-width: 993px) {
   .about-container {
     width: 70%;
     margin: auto;
@@ -314,8 +465,8 @@ section#about::before {
   .section-sub-title.pry-color {
     width: 70%;
   }
-}
-/**** end of About Styles ****/
+  }
+  /**** end of About Styles ****/
 
 /**** Services Styles ****/
 section#services .section-sub-title.pry-color {
