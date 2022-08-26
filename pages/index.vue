@@ -2,7 +2,7 @@
   <div id="main-wrapper">
     <section class="landing-section-wrapper">
       <div id="fullpage">
-        <div id="landing" class="section rel">
+        <div id="landing" class="waypoint section rel">
           <div class="row full-height">
             <div class="container full-height rel">
               <div class="big-banner-txt-wrapper flex-div">
@@ -14,7 +14,7 @@
             </div>
           </div>
         </div>
-        <div id="vision" class="section rel">
+        <div id="vision" class="waypoint section rel">
           <div class="row">
             <div class="side-drop">
               <div class="page-name">
@@ -32,7 +32,7 @@
             </div>
           </div>
         </div>
-        <div id="mission" class="section rel">
+        <div id="mission" class="waypoint section rel">
           <div class="row">
             <div class="side-drop">
               <div class="page-name">
@@ -49,7 +49,7 @@
             </div>
           </div>
         </div>
-        <div id="objectives" class="section rel">
+        <div id="objectives" class="waypoint section rel">
           <div class="row">
             <div class="side-drop">
               <div class="page-name">
@@ -90,7 +90,7 @@
           </div>
         </div>
 
-        <div class="other-sections">
+        <div class="waypoint other-sections">
           <section id="about">
             <div class="row rel">
               <div class="container">
@@ -264,27 +264,36 @@ export default {
   },
   data () {
     return {
-      observer: null
+      observer: null,
+      waypointed: false
     }
   },
   mounted () {
-    const images = document.querySelectorAll('.section')
+    if (window.matchMedia('(min-width: 993px)').matches) {
+      const images = document.querySelectorAll('.section')
 
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.intersectionRatio > 0) {
-          // entry.target.classList.remove('hidden');
-          entry.target.classList.add('visible')
-        } else {
-          entry.target.classList.remove('visible')
-          // entry.target.classList.add('hidden');
-        }
+      const config = {
+        root: document.querySelector('#fullpage'),
+        rootMargin: '0px',
+        threshold: 1.0
+      }
+
+      this.observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > 0) {
+            // entry.target.classList.remove('hidden');
+            entry.target.classList.add('visible')
+          } else {
+            entry.target.classList.remove('visible')
+            // entry.target.classList.add('hidden');
+          }
+        })
+      }, config)
+
+      images.forEach((image) => {
+        this.observer.observe(image)
       })
-    })
-
-    images.forEach((image) => {
-      this.observer.observe(image)
-    })
+    }
   }
 }
 </script>

@@ -42,6 +42,10 @@ div#app-wrapper nav {
   width: 100%;
   z-index: 10;
 }
+div#app-wrapper nav.no-fullpage {
+  background-color: var(--pry-color);
+  background: linear-gradient(19.07deg, #255E88 0%, #52B1C3 95.82%);
+}
 div#app-wrapper nav .brand-logo {
   position: relative;
 }
